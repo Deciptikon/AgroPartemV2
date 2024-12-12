@@ -54,6 +54,10 @@ void setup() {
   Serial.begin(115200);
   pinMode(led, OUTPUT);
 
+  digitalWrite(led, HIGH);
+  delay(1000);
+  digitalWrite(led, LOW);
+
   if (!preferences.begin("my-app", false)) {
     Serial.println("Ошибка открытия памяти!");
     return;
@@ -95,10 +99,7 @@ void setup() {
     // !!!!!!! неплохо добавить индикацию миганием светодиодов (или что-то подобное)
   }
 
-
-
-
-
+  preferences.end();
 }
 
 void loop() {
