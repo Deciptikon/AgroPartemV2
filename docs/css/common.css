@@ -1,3 +1,8 @@
+:root {
+  --size-header: 7%;
+  --size-footer: 7%;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -9,11 +14,12 @@ body {
   height: 100%;
   width: 100%;
   display: flex;
+  align-items: stretch;
 }
 
 header {
   width: 100%;
-  height: 15%;
+  height: var(--size-header);
   top: 0%;
   position: absolute;
   background-color: rgb(155, 184, 237);
@@ -22,15 +28,15 @@ header {
 main {
   width: 100%;
   height: auto;
-  top: 15%;
-  bottom: 10%;
+  top: var(--size-header);
+  bottom: var(--size-footer);
   position: absolute;
   background-color: rgb(142, 227, 198);
 }
 
 footer {
   width: 100%;
-  height: 10%;
+  height: var(--size-footer);
   bottom: 0%;
   position: absolute;
   background-color: rgb(236, 242, 206);
