@@ -3,13 +3,17 @@
 
 #include <WiFi.h>
 
+#include "constants.h"
+
 // Настройка Wi-Fi подключения
 void setupWiFi(const char* ssid, const char* password) {
   WiFi.begin(ssid, password);
 
   while (WiFi.status() != WL_CONNECTED) {
     delay(1000);
+    DEBUG_PRINT(".");
   }
+  DEBUG_PRINTLN("!");
 }
 
 // Настройка точки доступа
