@@ -27,6 +27,13 @@ export function applyCssById(elementId, styles) {
   }
 }
 
+export function deleteElementById(elementId) {
+  const element = document.getElementById(elementId);
+  if (element) {
+    element.remove();
+  }
+}
+
 export function createTop() {
   createTopLinks();
 }
@@ -55,4 +62,37 @@ export function createTopLinks() {
     fontSize: "18px",
     textDecoration: "none",
   });
+}
+
+export function getTestUser() {
+  return {
+    uid: "unique_user_id",
+    email: "user@example.com",
+    emailVerified: true,
+    displayName: "User Name",
+    photoURL: "https://example.com/photo.jpg",
+    phoneNumber: "+1234567890",
+    providerId: "firebase",
+    providerData: [
+      {
+        providerId: "google.com",
+        uid: "google_user_id",
+        displayName: "User Name",
+        photoURL: "https://example.com/photo.jpg",
+        email: "user@example.com",
+        phoneNumber: null,
+      },
+    ],
+    metadata: {
+      creationTime: "2024-01-01T00:00:00.000Z",
+      lastSignInTime: "2024-01-01T12:00:00.000Z",
+    },
+    customClaims: null,
+    tenantId: null,
+    tokenManager: {
+      accessToken: "OAuth2_access_token",
+      expirationTime: 1234567890123,
+      refreshToken: "refresh_token",
+    },
+  };
 }
