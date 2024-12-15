@@ -3,7 +3,6 @@ import {
   applyCssById,
   createTop,
   createBottom,
-  getTestUser,
   deleteElementById,
   createLinkToAccount,
 } from "./common.js";
