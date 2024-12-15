@@ -1,6 +1,6 @@
 :root {
-  --size-header: 7%;
-  --size-footer: 7%;
+  --size-header: 40px;
+  --size-footer: 40px;
 }
 
 * {
@@ -22,7 +22,7 @@ header {
   height: var(--size-header);
   top: 0%;
   position: absolute;
-  background-color: rgb(155, 184, 237);
+  background-color: rgb(236, 242, 206);
 }
 
 main {
@@ -39,5 +39,5 @@ footer {
   height: var(--size-footer);
   bottom: 0%;
   position: absolute;
-  background-color: rgb(236, 242, 206);
+  background-color: rgb(155, 184, 237);
 }

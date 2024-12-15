@@ -46,8 +46,8 @@ export function createTopLinks() {
   createTextLink("./index.html", "Главная", "header", "header-link-to-index");
   applyCssById("header-link-to-index", {
     color: "blue",
-    top: "15px",
-    left: "15px",
+    top: "10px",
+    left: "20px",
     position: "absolute",
     fontSize: "18px",
     textDecoration: "none",
@@ -56,12 +56,55 @@ export function createTopLinks() {
   createTextLink("./about.html", "О Нас", "header", "header-link-to-about");
   applyCssById("header-link-to-about", {
     color: "blue",
-    top: "15px",
+    top: "10px",
     left: "150px",
     position: "absolute",
     fontSize: "18px",
     textDecoration: "none",
   });
+}
+
+export function createLinkToAccount() {
+  const storedUser = localStorage.getItem("user");
+  console.log(`storedUser=${storedUser}`);
+  if (storedUser && storedUser !== "null") {
+    //const user = JSON.parse(storedUser);
+    deleteElementById("header-link-to-login");
+    createTextLink(
+      "./account.html",
+      "Личный кабинет",
+      "header",
+      "header-link-to-account"
+    );
+    applyCssById("header-link-to-account", {
+      color: "blue",
+      top: "10px",
+      right: "25px",
+      position: "absolute",
+      fontSize: "18px",
+      textDecoration: "none",
+    });
+  } else {
+    deleteElementById("header-link-to-account");
+    createTextLink("#", "Регистрация/Вход", "header", "header-link-to-login");
+    applyCssById("header-link-to-login", {
+      color: "blue",
+      top: "10px",
+      right: "25px",
+      position: "absolute",
+      fontSize: "18px",
+      textDecoration: "none",
+    });
+    document
+      .getElementById("header-link-to-login")
+      .addEventListener("click", function (event) {
+        event.preventDefault();
+        console.log(`Redirect to Google OAuth2.0 ...`);
+        const testUser = getTestUser();
+        localStorage.setItem("user", JSON.stringify(testUser));
+        window.location.reload();
+      });
+  }
 }
 
 export function getTestUser() {

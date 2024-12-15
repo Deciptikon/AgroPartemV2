@@ -12,7 +12,7 @@ createBottom();
 createTextLink("#", "Выход", "header", "header-link-to-logout");
 applyCssById("header-link-to-logout", {
   color: "blue",
-  top: "15px",
+  top: "10px",
   right: "25px",
   position: "absolute",
   fontSize: "18px",
@@ -23,7 +23,6 @@ document
   .addEventListener("click", function (event) {
     event.preventDefault();
     console.log(`Выход из аккаунта`);
-    const testUser = null;
-    localStorage.setItem("user", JSON.stringify(testUser));
+    localStorage.setItem("user", JSON.stringify(null));
     window.location.href = "./index.html";
   });
